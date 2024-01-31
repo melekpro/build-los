@@ -18,7 +18,6 @@ sudo chmod a+x /usr/bin/repo
 
 # Initialize CyanogenMod 14 source repository
 cd ~/android/cm14
-make clean
 repo init -u https://github.com/LineageOS/android.git -b cm-14.1
 repo sync
 
