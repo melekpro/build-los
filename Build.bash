@@ -32,4 +32,5 @@ echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 
 # Start the build with croot and mka bacon
 cd ~/android/cm14
-croot && mka bacon
+cd ~/android/cm14
+croot && brunch 4013 -j1
