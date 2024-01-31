@@ -23,6 +23,12 @@ repo sync
 
 # Clone device-specific and vendor code directly into their respective directories
 cd ~/android/cm14
+
+# Remove existing device and vendor repositories
+
+rm -rf device/4013
+rm -rf vendor/4013
+
 git clone https://github.com/melekpro/android_device_4013 device/4013
 git clone https://github.com/melekpro/android_vendor_4013 vendor/4013
 source build/envsetup.sh
@@ -32,4 +38,4 @@ echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 
 # Start the build 
 cd ~/android/cm14
-mka systemimage
+even make
