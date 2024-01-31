@@ -30,6 +30,6 @@ source build/envsetup.sh
 # Add lunch combo for userdebug build
 echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 
-# Start the build with croot and mka bacon
+# Start the build 
 cd ~/android/cm14
-croot && brunch
+mka systemimage
