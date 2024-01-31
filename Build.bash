@@ -18,7 +18,7 @@ sudo chmod a+x /usr/bin/repo
 
 # Initialize CyanogenMod 14 source repository
 cd ~/android/cm14
-repo init -u git://github.com/TestMT6572/android-A102.git -b cm-14.1
+repo init -u https://github.com/LineageOS/android.git -b cm-14.1
 repo sync
 
 # Clone device-specific and vendor code directly into their respective directories
