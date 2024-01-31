@@ -18,7 +18,7 @@ sudo chmod a+x /usr/bin/repo
 
 # Initialize CyanogenMod 14 source repository
 cd ~/android/cm14
-repo init -u https://github.com/CyanogenMod/android.git -b cm-14.1
+repo init -u git://github.com/TestMT6572/android-A102.git -b cm-14.1
 repo sync
 
 # Clone device-specific and vendor code directly into their respective directories
@@ -32,5 +32,4 @@ echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 
 # Start the build with croot and mka bacon
 cd ~/android/cm14
-cd ~/android/cm14
-croot && brunch 4013 -j1
+croot && brunch
