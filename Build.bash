@@ -5,6 +5,11 @@ export LC_ALL=C
 
 # CyanogenMod 14 Build Script
 
+# Add ccache configuration
+echo 'export USE_CCACHE=1' >> ~/.bashrc
+echo 'export CCACHE_EXEC=/usr/bin/ccache' >> ~/.bashrc
+source ~/.bashrc
+
 # Install build packages
 sudo apt update
 sudo apt -y install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git git-lfs gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev libelf-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev python3
@@ -36,11 +41,7 @@ source build/envsetup.sh
 # Add lunch combo for userdebug build
 echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 
-# Add export USE_NINJA=false to ~/.bashrc
-echo 'export USE_NINJA=false' >> ~/.bashrc
-source ~/.bashrc
-
-# Start the build 
+# Start the build
 cd ~/android/cm14
-lunch 16
+lunch lineage_4013-userdebug
 mka bacon -j8
