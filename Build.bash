@@ -43,5 +43,4 @@ echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 
 # Start the build
 cd ~/android/cm14
-lunch lineage_4013-userdebug
 mka bacon -j8
