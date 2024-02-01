@@ -34,7 +34,7 @@ git clone https://github.com/melekpro/android_vendor_4013 vendor/4013
 source build/envsetup.sh
 
 # Add lunch combo for userdebug build
-echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
+croot && brunch lineage_4013-userdebug
 
 # Start the build 
 cd ~/android/cm14
