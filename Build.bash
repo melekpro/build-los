@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set locale to "C" for consistent behavior
+export LC_ALL=C
+
 # CyanogenMod 14 Build Script
 
 # Install build packages
@@ -21,21 +24,23 @@ cd ~/android/cm14
 repo init -u https://github.com/LineageOS/android.git -b cm-14.1
 repo sync
 
-# Clone device-specific and vendor code directly into their respective directories
-cd ~/android/cm14
-
 # Remove existing device and vendor repositories
-
 rm -rf device/4013
 rm -rf vendor/4013
 
+# Clone updated device and vendor repositories
 git clone https://github.com/melekpro/android_device_4013 device/4013
 git clone https://github.com/melekpro/android_vendor_4013 vendor/4013
 source build/envsetup.sh
 
 # Add lunch combo for userdebug build
 echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
-# Start the build 
+
+# Add export USE_NINJA=false to ~/.bashrc
+echo 'export USE_NINJA=false' >> ~/.bashrc
+source ~/.bashrc
+
+# Start the build
 cd ~/android/cm14
-lunch 16
+lunch lineage_4013-userdebug
 mka bacon -j8
