@@ -40,7 +40,7 @@ echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 echo 'export USE_NINJA=false' >> ~/.bashrc
 source ~/.bashrc
 
-# Start the build
+# Start the build 
 cd ~/android/cm14
-lunch lineage_4013-userdebug
+lunch 16
 mka bacon -j8
