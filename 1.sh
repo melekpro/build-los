@@ -40,8 +40,8 @@ git clone https://github.com/melekpro/android_vendor_4013 vendor/4013
 
 # Apply patches
 cd device/4013/patches
-chmod +x apply-patches.sh
-./apply-patches.sh
+chmod +x apply.sh
+./apply.sh
 
 # Add lunch combo for userdebug build
 echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
