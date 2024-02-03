@@ -35,9 +35,17 @@ rm -rf device/4013
 rm -rf vendor/4013
 
 # Clone updated device and vendor repositories
-git clone https:https://github.com/seluce/android_device_cubot_x18 device/X18
-git clone https://github.com/seluce/android_vendor_cubot_x18 vendor/X18
+git clone https://github.com/melekpro/android_device_4013 device/4013
+git clone https://github.com/melekpro/android_vendor_4013 vendor/4013
+
+# Apply patches
+cd device/alcatel/4013/patches_mtk
+chmod +x apply-patches.sh
+./apply-patches.sh
+cd ../../..
+
 source build/envsetup.sh
-# Start the build
+# Start the build environment
 croot
-brunch X18
+# Start the build for the specified device
+brunch 4013
