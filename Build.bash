@@ -8,6 +8,7 @@ export LC_ALL=C
 # Add ccache configuration
 echo 'export USE_CCACHE=1' >> ~/.bashrc
 echo 'export CCACHE_EXEC=/usr/bin/ccache' >> ~/.bashrc
+echo 'prebuilts/misc/linux-x86/ccache/ccache -M 50G' >> ~/.bashrc  # Added line for ccache size
 source ~/.bashrc
 
 # Install build packages
@@ -41,10 +42,7 @@ source build/envsetup.sh
 # Add lunch combo for userdebug build
 echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 
-# Clean previous build artifacts
-make clean
-make clobber
-
 # Start the build
+croot
 lunch lineage_4013-userdebug
 make bacon -j8
