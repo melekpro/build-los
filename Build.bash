@@ -44,4 +44,4 @@ echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 
 # Start the build
 croot
-make bacon -j8
+brunch lineage_4013-userdebug
