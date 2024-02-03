@@ -10,10 +10,6 @@ echo 'export USE_CCACHE=1' >> ~/.bashrc
 echo 'export CCACHE_EXEC=/usr/bin/ccache' >> ~/.bashrc
 source ~/.bashrc
 
-# Specify Java 8
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
-export PATH=$JAVA_HOME/bin:$PATH
-
 # Install build packages
 sudo apt update
 sudo apt -y install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git git-lfs gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev libelf-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev python3
@@ -30,11 +26,6 @@ sudo chmod a+x /usr/bin/repo
 
 # Initialize CyanogenMod 14 source repository
 cd ~/android/cm14
-
-# Specify Java 8 again in case repo needs it
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
-export PATH=$JAVA_HOME/bin:$PATH
-
 repo init -u https://github.com/LineageOS/android.git -b cm-14.1
 repo sync
 
@@ -50,6 +41,10 @@ source build/envsetup.sh
 # Add lunch combo for userdebug build
 echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 
+# Clean previous build artifacts
+make clean
+make clobber
+
 # Start the build
-cd ~/android/cm14
-mka racoon -j8
+lunch lineage_4013-userdebug
+make bacon -j8
