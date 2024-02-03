@@ -35,13 +35,9 @@ rm -rf device/4013
 rm -rf vendor/4013
 
 # Clone updated device and vendor repositories
-git clone https://github.com/melekpro/android_device_4013 device/4013
-git clone https://github.com/melekpro/android_vendor_4013 vendor/4013
+git clone https:https://github.com/seluce/android_device_cubot_x18 device/X18
+git clone https://github.com/seluce/android_vendor_cubot_x18 vendor/X18
 source build/envsetup.sh
-
-# Add lunch combo for userdebug build
-echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
-
 # Start the build
 croot
-mka bacon
+brunch X18
