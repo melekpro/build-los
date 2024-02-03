@@ -39,7 +39,7 @@ git clone https://github.com/melekpro/android_device_4013 device/4013
 git clone https://github.com/melekpro/android_vendor_4013 vendor/4013
 
 # Apply patches
-cd device/alcatel/4013/patches_mtk
+cd device/4013/patches_mtk
 chmod +x apply-patches.sh
 ./apply-patches.sh
 cd ../../..
