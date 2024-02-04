@@ -3,8 +3,6 @@
 # Set locale to "C" for consistent behavior
 export LC_ALL=C
 
-# CyanogenMod 14 Build Script
-
 # Add ccache configuration
 echo 'export USE_CCACHE=1' >> ~/.bashrc
 echo 'export CCACHE_EXEC=/usr/bin/ccache' >> ~/.bashrc
@@ -45,6 +43,9 @@ chmod +x apply.sh
 
 # Add lunch combo for userdebug build
 echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
+
+# Source build environment setup
+source build/envsetup.sh
 
 # Start the build
 croot
