@@ -46,6 +46,6 @@ chmod +x apply.sh
 # Add lunch combo for userdebug build
 echo "add_lunch_combo lineage_4013-userdebug" >> device/4013/vendorsetup.sh
 
-source build/envsetup.sh
-# Start the build for the specified device
+# Start the build
+croot
 brunch 4013
