@@ -49,4 +49,4 @@ source build/envsetup.sh
 
 # Start the build
 croot
-brunch 4013
+brunch lineage_4013-userdebug
