@@ -23,9 +23,9 @@ sudo cp ~/bin/repo /usr/bin/repo
 sudo chmod a+x ~/bin/repo
 sudo chmod a+x /usr/bin/repo
 
-# Initialize CyanogenMod 14 source repository
-cd ~/android/cm14
-repo init -u https://github.com/LineageOS/android.git -b cm-14.1
+# Initialize LineageOS 15.1 source repository
+cd ~/android/lineage
+repo init -u https://github.com/LineageOS/android.git -b lineage-15.1
 repo sync
 
 # Remove existing device and vendor repositories
